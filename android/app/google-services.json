@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "411019933399",
+    "project_id": "monthlybudget-a8e3f",
+    "storage_bucket": "monthlybudget-a8e3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411019933399:android:f4c24dd041d48ebac02292",
+        "android_client_info": {
+          "package_name": "com.example.budgetplanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411019933399-l1578c3hum75l7pn2e98ig1r2tte6ijn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.budgetplanner",
+            "certificate_hash": "7206f129532cf99c9a6e7b7b005e4bc1e34f4d14"
+          }
+        },
+        {
+          "client_id": "411019933399-ou5obica15jel06v47b4o6ek8j4luhkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoPMZTNTsdO5ZD6TP8iOjr2YUFVy6YZOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411019933399-ou5obica15jel06v47b4o6ek8j4luhkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
