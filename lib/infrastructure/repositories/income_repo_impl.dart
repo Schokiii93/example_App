@@ -24,12 +24,12 @@ class IncomeRepositoryImpl implements IncomeRepository {
       if (e is FirebaseException) {
         if (e.code.contains("permssion-denied") ||
             e.code.contains("PERMISSION-DENIED")) {
-          return left(InsufficientPermissions());
+          return left(InsufficientPermissionsIncome());
         } else {
-          return left(UnexpectedFailure());
+          return left(UnexpectedFailureIncome());
         }
       } else {
-        return left(UnexpectedFailure());
+        return left(UnexpectedFailureIncome());
       }
     });
   }
