@@ -6,7 +6,11 @@ class IncomeEntry {
   final String income;
   final String type;
 
-  IncomeEntry({required this.id, required this.income, required this.type});
+  IncomeEntry({
+    required this.id,
+    required this.income,
+    required this.type,
+  });
 
   //Factory Konstruktor to get empty entry
   factory IncomeEntry.empty() {
