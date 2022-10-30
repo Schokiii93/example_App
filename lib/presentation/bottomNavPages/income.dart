@@ -1,10 +1,19 @@
 import 'package:budgetplanner/application/incomeEntries/observer/income_observer_bloc.dart';
+import 'package:budgetplanner/domain/entities/incomeEntry.dart';
 import 'package:budgetplanner/presentation/home/widgets/incomeWidget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class IncomePage extends StatelessWidget {
+class IncomePage extends StatefulWidget {
   const IncomePage({super.key});
+
+  @override
+  State<IncomePage> createState() => _IncomePageState();
+}
+
+class _IncomePageState extends State<IncomePage> {
+  final user = FirebaseAuth.instance.currentUser!;
 
   @override
   Widget build(BuildContext context) {
