@@ -3,7 +3,7 @@ import 'package:budgetplanner/domain/repositories/auth_repository.dart';
 import 'package:budgetplanner/injection.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-extension FireStoreExt on FirebaseFirestore {
+extension FireStoreExt2 on FirebaseFirestore {
   Future<DocumentReference> userDocument() async {
     final userOption = sl<AuthRepository>().getSignedInUser();
     final user = userOption.getOrElse(() => throw NotAuthenticatedError());
