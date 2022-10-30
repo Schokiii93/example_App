@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: file_names
 
 import 'package:budgetplanner/domain/entities/incomeEntry.dart';
+import 'package:flutter/material.dart';
 
 class IncomeWidget extends StatelessWidget {
   final IncomeEntry incomeEntry;

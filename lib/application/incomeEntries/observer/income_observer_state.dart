@@ -17,7 +17,7 @@ class IncomeObserverFailure extends IncomeObserverState {
 
 //Geladete Seite
 class IncomeObserverSuccess extends IncomeObserverState {
-  //Nachdem die Seite geladen wurde, werden die Todos angezeigt
+  //Show income after page was loaded
   final List<IncomeEntry> incomeEntry;
   IncomeObserverSuccess({required this.incomeEntry});
 }
