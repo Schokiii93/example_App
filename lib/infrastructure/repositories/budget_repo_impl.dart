@@ -36,17 +36,74 @@ class BudgetRepositoryImpl implements BudgetRepository {
   }
 
   @override
-  Future<Either<BudgetFailure, Unit>> create(BudgetEntry budgetEntry) {
-    throw UnimplementedError();
+  Future<Either<BudgetFailure, Unit>> create(BudgetEntry budgetEntry) async {
+    try {
+      //Pfad aufrufen (user documents)
+      final userDoc = await firestore.userDocument();
+      //Entity muss in Model umgewandelt werden (Konstruktor fromDomain)
+      final budgetModel = BudgetModel.fromDomain(budgetEntry);
+      //budget updaten unter der vorhandenen ID
+      /*budgetCollection geht in die Sammlung budgets rein*/
+      //budget updaten und in Map umwandeln
+      await userDoc.entryCollection
+          .doc(budgetModel.id)
+          .update(budgetModel.toMap());
+      //Wenn erfolgreich, dann rechte Seite ausgeben
+      return right(unit);
+      //Fehler abfangen
+    } on FirebaseException catch (e) {
+      if (e.code.contains("PERMISSION_DENIED")) {
+        return left(InsufficientPermissions());
+      } else {
+        return left(UnexpectedFailure());
+      }
+    }
   }
 
   @override
-  Future<Either<BudgetFailure, Unit>> delete(BudgetEntry budgetEntry) {
-    throw UnimplementedError();
+  Future<Either<BudgetFailure, Unit>> delete(BudgetEntry budgetEntry) async {
+    try {
+      //Pfad aufrufen (user documents)
+      final userDoc = await firestore.userDocument();
+      //Entity muss in Model umgewandelt werden (Konstruktor fromDomain)
+      final budgetModel = BudgetModel.fromDomain(budgetEntry);
+      /*todoCollection geht in die Sammlung todos rein*/
+      //To-do löschen unter der vorhandenen ID
+      await userDoc.entryCollection.doc(budgetModel.id).delete();
+      //Wenn erfolgreich, dann rechte Seite ausgeben
+      return right(unit);
+      //Fehler abfangen
+    } on FirebaseException catch (e) {
+      if (e.code.contains("PERMISSION_DENIED")) {
+        return left(InsufficientPermissions());
+      } else {
+        return left(UnexpectedFailure());
+      }
+    }
   }
 
   @override
-  Future<Either<BudgetFailure, Unit>> update(BudgetEntry budgetEntry) {
-    throw UnimplementedError();
+  Future<Either<BudgetFailure, Unit>> update(BudgetEntry budgetEntry) async {
+    try {
+      //Pfad aufrufen (user documents)
+      final userDoc = await firestore.userDocument();
+      //Entity muss in Model umgewandelt werden (Konstruktor fromDomain)
+      final budgetModel = BudgetModel.fromDomain(budgetEntry);
+      //To-do updaten unter der vorhandenen ID
+      /*todoCollection geht in die Sammlung todos rein*/
+      //To-do updaten und in Map umwandeln
+      await userDoc.entryCollection
+          .doc(budgetModel.id)
+          .update(budgetModel.toMap());
+      //Wenn erfolgreich, dann rechte Seite ausgeben
+      return right(unit);
+      //Fehler abfangen
+    } on FirebaseException catch (e) {
+      if (e.code.contains("PERMISSION_DENIED")) {
+        return left(InsufficientPermissions());
+      } else {
+        return left(UnexpectedFailure());
+      }
+    }
   }
 }

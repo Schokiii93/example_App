@@ -1,3 +1,4 @@
+import 'package:budgetplanner/core/failures/budget_failures.dart';
 import 'package:budgetplanner/domain/entities/incomeEntry.dart';
 import 'package:budgetplanner/core/failures/income_failures.dart';
 import 'package:budgetplanner/domain/repositories/income_repository.dart';
@@ -35,7 +36,7 @@ class IncomeRepositoryImpl implements IncomeRepository {
   }
 
   @override
-  Future<Either<IncomeFailure, Unit>> create(IncomeEntry incomeEntry) {
+  Future<Either<IncomeFailure, Unit>> create(IncomeEntry incomeEntry) async {
     throw UnimplementedError();
   }
 

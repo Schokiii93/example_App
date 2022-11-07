@@ -37,7 +37,6 @@ class ObserverBloc extends Bloc<ObserverEvent, ObserverState> {
     //Was passiert, wenn das Event Updated aufgerufen wird?
     on<EntriesUpdateEvent>((event, emit) {
       // ignore: avoid_print
-      print(event.failureOrBudgetEntry);
       event.failureOrBudgetEntry.fold(
           (failures) => emit(ObserverFailure(budgetFailure: failures)),
           (budgetEntry) => emit(ObserverSucccess(budgetEntry: budgetEntry)));
