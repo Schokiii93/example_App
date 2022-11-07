@@ -1,4 +1,3 @@
-/*
 // ignore_for_file: depend_on_referenced_packages, avoid_print
 
 import 'dart:async';
@@ -41,12 +40,9 @@ class IncomeObserverBloc
 
     //Was passiert, wenn das Event Updated aufgerufen wird?
     on<IncomeUpdateEvent>((event, emit) {
-      //Testen
-      print(event.failureOrIncomeEntry);
       event.failureOrIncomeEntry.fold(
-          (failures) => emit(IncomeObserverFailure(incomeFailure: failures)),
-          (incomeEntry) =>
-              emit(IncomeObserverSuccess(incomeEntry: incomeEntry)));
+          (fehler) => emit(IncomeObserverFailure(incomeFailure: fehler)),
+          (einkommen) => emit(IncomeObserverSuccess(incomeEntry: einkommen)));
     });
   }
 
@@ -57,5 +53,3 @@ class IncomeObserverBloc
     return super.close();
   }
 }
-
-*/

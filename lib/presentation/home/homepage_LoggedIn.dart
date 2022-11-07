@@ -2,6 +2,7 @@
 
 import 'package:auto_route/auto_route.dart';
 import 'package:budgetplanner/application/budgetEntries/observer/observer_bloc.dart';
+import 'package:budgetplanner/application/incomeEntries/observer/income_observer_bloc.dart';
 import 'package:budgetplanner/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,10 +28,14 @@ class _HomePageLoggedInState extends State<HomePageLoggedIn> {
   @override
   Widget build(BuildContext context) {
     //get observer
+    final incomeObserverBloc = sl<IncomeObserverBloc>()
+      ..add(IncomeObserveAllEvent());
     final observerBloc = sl<ObserverBloc>()..add(ObserveAllEvent());
     return MultiBlocProvider(
       providers: [
         BlocProvider<ObserverBloc>(create: (context) => observerBloc),
+        BlocProvider<IncomeObserverBloc>(
+            create: (context) => incomeObserverBloc),
       ],
       child: MultiBlocListener(
         listeners: [

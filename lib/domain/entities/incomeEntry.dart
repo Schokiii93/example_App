@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:budgetplanner/domain/entities/id.dart';
 
 class IncomeEntry {

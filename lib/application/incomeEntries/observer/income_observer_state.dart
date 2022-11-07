@@ -1,4 +1,3 @@
-/*
 part of 'income_observer_bloc.dart';
 
 @immutable
@@ -22,5 +21,3 @@ class IncomeObserverSuccess extends IncomeObserverState {
   final List<IncomeEntry> incomeEntry;
   IncomeObserverSuccess({required this.incomeEntry});
 }
-
-*/
