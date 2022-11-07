@@ -41,8 +41,10 @@ class IncomeObserverBloc
     //Was passiert, wenn das Event Updated aufgerufen wird?
     on<IncomeUpdateEvent>((event, emit) {
       event.failureOrIncomeEntry.fold(
-          (fehler) => emit(IncomeObserverFailure(incomeFailure: fehler)),
-          (einkommen) => emit(IncomeObserverSuccess(incomeEntry: einkommen)));
+          (failureIncome) =>
+              emit(IncomeObserverFailure(incomeFailure: failureIncome)),
+          (incomeEntry) =>
+              emit(IncomeObserverSuccess(incomeEntry: incomeEntry)));
     });
   }
 
