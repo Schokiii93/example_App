@@ -1,3 +1,4 @@
+/*
 part of 'income_observer_bloc.dart';
 
 @immutable
@@ -11,3 +12,5 @@ class IncomeUpdateEvent extends IncomeObserverEvent {
   final Either<IncomeFailure, List<IncomeEntry>> failureOrIncomeEntry;
   IncomeUpdateEvent({required this.failureOrIncomeEntry});
 }
+
+*/

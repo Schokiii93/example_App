@@ -1,7 +1,6 @@
 import 'package:budgetplanner/application/auth/authBloc/auth_bloc.dart';
 import 'package:budgetplanner/application/auth/signUpForm/sign_up_form_bloc.dart';
 import 'package:budgetplanner/application/budgetEntries/observer/observer_bloc.dart';
-import 'package:budgetplanner/application/incomeEntries/observer/income_observer_bloc.dart';
 import 'package:budgetplanner/domain/repositories/auth_repository.dart';
 import 'package:budgetplanner/domain/repositories/budget_repository.dart';
 import 'package:budgetplanner/domain/repositories/income_repository.dart';
@@ -42,5 +41,5 @@ Future<void> init() async {
 
   //! statemanagement
   sl.registerFactory(() => ObserverBloc(budgetRepository: sl()));
-  sl.registerFactory(() => IncomeObserverBloc(incomeRepository: sl()));
+  //sl.registerFactory(() => IncomeObserverBloc(incomeRepository: sl()));
 }
